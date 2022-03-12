@@ -20,6 +20,10 @@ jobs:
           #seq 2 | parallel -n0 bash script_docker_pull.sh
   Docker_Pull_GHCR:
     runs-on: ubuntu-latest
+    strategy:
+       fail-fast: false
+       matrix:
+         runner: [0,1,2,3]
     steps:
       - uses: actions/checkout@v2
       - name: Docker
