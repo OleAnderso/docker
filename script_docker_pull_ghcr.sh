@@ -1,5 +1,7 @@
 #! /bin/bash
-end=$((SECONDS+60))
+random_number=$(shuf -i 1-30 -n 1)
+end=$((SECONDS+180+random_number))
+echo "RunCount: $end"
 count=0
 while [ $SECONDS -lt $end ]; do
     docker pull ghcr.io/michaelknightdriver/docker-nginx-brotli:latest
