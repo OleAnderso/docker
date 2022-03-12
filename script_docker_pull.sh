@@ -16,4 +16,4 @@ while [ $SECONDS -lt $end ]; do
 done
 
 currenttime=$(date +%s)
-curl  -X POST -H "Content-type: application/json" -d "{ \"series\" : [{\"metric\":\"docker.pull.dockerhub\", \"points\":[[$currenttime, $count]], \"type\":\"count\", \"host\":\"test.example.com\", \"tags\":[\"environment:test\"]} ]  }" "httyps://app.datadoghq.com/api/v1/series?api_key=$2"
+curl  -X POST -H "Content-type: application/json" -d "{ \"series\" : [{\"metric\":\"docker.pull.dockerhub\", \"points\":[[$currenttime, $count]], \"type\":\"count\", \"host\":\"test.example.com\", \"tags\":[\"environment:test\"]} ]  }" "https://app.datadoghq.com/api/v1/series?api_key=$2"
