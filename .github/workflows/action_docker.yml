@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Docker
         run: |
-          bash script_docker_pull.sh
+          bash script_docker_pull.sh ${{ secrets.DOCKER_REPO }} ${{ secrets.DATADOG_KEY }}
           #seq 2 | parallel -n0 bash script_docker_pull.sh
   Docker_Pull_GHCR:
     runs-on: ubuntu-latest
@@ -27,4 +27,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Docker
-        run: bash script_docker_pull_ghcr.sh
+        run: bash script_docker_pull_ghcr.sh ${{ secrets.DOCKER_REPO }} ${{ secrets.DATADOG_KEY }}
