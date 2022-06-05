@@ -4,7 +4,7 @@ on:
     branches: [ main2 ]
   workflow_dispatch:
   schedule:
-    - cron: "15,45 * * * *"
+    - cron: "*/15 * * * *"
 jobs:
   Docker_Pull:
     runs-on: ubuntu-latest
