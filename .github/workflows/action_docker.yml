@@ -4,14 +4,14 @@ on:
     branches: [ main2 ]
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/10 * * * *"
 jobs:
   Docker_Pull:
     runs-on: ubuntu-latest
     strategy:
        fail-fast: false
        matrix:
-         runner: [0,1,2,3,4,5,6]
+         runner: [0,1,2,3,4,5,6,7,8]
     steps:
       - uses: actions/checkout@v2
       - name: Docker
@@ -23,7 +23,7 @@ jobs:
     strategy:
        fail-fast: false
        matrix:
-         runner: [0,1,2,3]
+         runner: [0,1,2,3,4,5,6]
     steps:
       - uses: actions/checkout@v2
       - name: Docker
