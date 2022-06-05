@@ -1,4 +1,5 @@
 #! /bin/bash
+
 random_number=$(shuf -i 1-30 -n 1)
 end=$((SECONDS+180+random_number))
 echo "RunCount: $end"
